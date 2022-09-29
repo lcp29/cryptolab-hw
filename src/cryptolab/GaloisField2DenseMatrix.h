@@ -107,7 +107,8 @@ namespace cryptolab
             {
                 os << a[m][n] << " ";
             }
-            os << "\n";
+            if (m != M - 1)
+                os << "\n";
         }
         return os;
     }

@@ -50,7 +50,14 @@ int main()
     cout << "输入明文: ";
     getline(cin, tmpStr);
     auto c = f.encrypt(tmpStr, pt, wm);
+    for (int i = 0; i < 44; ++i)
+    {
+        cout << "W[" << dec << i << "] = " << setw(2) << setfill('0') << hex << f.getW(i) << "  ";
+        if (i % 4 == 3)
+            cout << endl;
+    }
     cout << "加密后的密文(16进制)为: " << hex << c << endl;
+    cout << "解密后的明文为：" << f.decrypt(c, pt, wm).toString() << endl;
     cout << "是否写出到文件(y|n)? ";
     getline(cin, tmpStr);
     if (tmpStr == "y")
@@ -76,7 +83,7 @@ int main()
             ofile.close();
         }
     }
-    cout << "是否读取文件并使用相同设置解密(y|n)?";
+    cout << "是否读取文件并使用相同设置解密(y|n)? ";
     getline(cin, tmpStr);
     if (tmpStr == "y")
     {
@@ -111,9 +118,9 @@ int main()
             c = ByteBuffer::fromHexStr(buf);
             delete[] buf;
         }
+        cout << "读取到的密文为: " << c << endl;
+        c = f.decrypt(c, pt, wm);
+        cout << "解密后的明文为：" << c.toString() << endl;
     }
-    cout << "读取到的密文为: " << c << endl;
-    c = f.decrypt(c, pt, wm);
-    cout << "解密后的明文为：" << c.toString() << endl;
     return 0;
 }

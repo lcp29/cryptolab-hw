@@ -204,6 +204,13 @@ namespace cryptolab
          */
         ByteBuffer decrypt(const ByteBuffer &b, PaddingType p, WorkingMode mode = WorkingMode::ECB);
 
+        /**
+         * 获取密钥扩展过程中的W[idx]
+         * @param idx W的编号
+         * @return W[idx]
+         */
+        keyW getW(int idx);
+
     };
 
 } // cryptolab
