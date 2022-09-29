@@ -241,4 +241,12 @@ namespace cryptolab
             for (int m = 0; m < 4; ++m, ++i)
                 initVec[m][n] = b[i];
     }
+
+    AES128::keyW AES128::getW(int idx)
+    {
+        return {subKeys[idx / 4][0][idx % 4],
+                subKeys[idx / 4][1][idx % 4],
+                subKeys[idx / 4][2][idx % 4],
+                subKeys[idx / 4][3][idx % 4]};
+    }
 } // cryptolab
