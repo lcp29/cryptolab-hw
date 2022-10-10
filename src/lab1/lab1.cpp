@@ -1,5 +1,5 @@
-#include "../cryptolab/GaloisField2Vector.h"
-#include "../cryptolab/AES128.h"
+#include "GaloisField2Vector.h"
+#include "AES128.h"
 #include <iostream>
 #include <fstream>
 
