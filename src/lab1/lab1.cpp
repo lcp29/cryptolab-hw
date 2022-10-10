@@ -1,5 +1,5 @@
-#include "cryptolab/GaloisField2Vector.h"
-#include "cryptolab/AES128.h"
+#include "../cryptolab/GaloisField2Vector.h"
+#include "../cryptolab/AES128.h"
 #include <iostream>
 #include <fstream>
 
@@ -58,6 +58,7 @@ int main()
     }
     cout << "加密后的密文(16进制)为: " << hex << c << endl;
     cout << "解密后的明文为：" << f.decrypt(c, pt, wm).toString() << endl;
+    cout << "对应16进制：" << f.decrypt(c, pt, wm) << endl;
     cout << "是否写出到文件(y|n)? ";
     getline(cin, tmpStr);
     if (tmpStr == "y")
