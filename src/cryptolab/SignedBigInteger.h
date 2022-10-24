@@ -13,6 +13,7 @@ namespace cryptolab
     class SignedBigInteger
     {
     public:
+        // 全部public开摆
         BigInteger<N> digit;
         bool sign;
 
