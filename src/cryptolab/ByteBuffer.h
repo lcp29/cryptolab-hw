@@ -20,6 +20,8 @@ namespace cryptolab
     public:
         ByteBuffer() = default;
 
+        ByteBuffer(const ByteBuffer &b);
+
         ByteBuffer(const std::initializer_list<unsigned char> &b);
 
         ByteBuffer(const std::string &b);

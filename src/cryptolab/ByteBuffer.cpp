@@ -85,4 +85,9 @@ namespace cryptolab
         }
         return ret;
     }
+
+    ByteBuffer::ByteBuffer(const ByteBuffer &b)
+    {
+        dat.assign(b.dat.begin(), b.dat.end());
+    }
 } // cryptolab
